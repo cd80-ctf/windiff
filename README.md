@@ -11,16 +11,16 @@ This is essentially a Python port of the excellent [PSFExtractor](https://github
 ```python
 git clone https://github.com/cd80-ctf/windiff && cd windiff
 pip install -r requirements.txt
-python windiff windows-update.msu
+python windiff.py windows-update.msu
 ```
 
 ## Full API:
 
 Windiff can be called on three different types of files:
 
-1) A raw `.msu` update file: `python windiff windows-update.msu`
-2) An extracted `.cab` file: `python windiff windows-update.cab`. Note that this assumes the matching `.psf` file sits in the same directory as the specified `.cab` file and has the same name. In most cases, it will usually be easier to use option 1.
-3) Manually passing a `.psf` file and an XML manifest: `python windiff windows-update.psf --manifest_path express.psf.cix.xml`. This assumes you have already extracted the desired XML manifest from the CAB file, or from some other source.
+1) A raw `.msu` update file: `python windiff.py windows-update.msu`
+2) An extracted `.cab` file: `python windiff.py windows-update.cab`. Note that this assumes the matching `.psf` file sits in the same directory as the specified `.cab` file and has the same name. In most cases, it will usually be easier to use option 1.
+3) Manually passing a `.psf` file and an XML manifest: `python windiff.py windows-update.psf --manifest_path express.psf.cix.xml`. This assumes you have already extracted the desired XML manifest from the CAB file, or from some other source.
 
 By default, the deltas are extracted a new `deltas` folder in the same directory as the input file. However, this can be changed by passing the `--out_dir` flag.
 
